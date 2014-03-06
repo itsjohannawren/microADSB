@@ -422,7 +422,7 @@ function microADSBASCIIToObject (data) {
 	}
 
 	// Store the frame in a format that most people understand
-	result.frame = result.type + result.frame;
+	result.frame = result.type + result.frame + ';';
 
 	// Save out the downlink format
 	result.downlinkformat = (result.data [0] & 0xf8) >> 3;
