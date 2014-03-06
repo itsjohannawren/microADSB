@@ -1,0 +1,30 @@
+{
+  "name": "microADSB",
+  "version": "0.1.0",
+  "description": "microADSB interface",
+  "author": {
+    "name": "Jeff Walter",
+    "email": "jeff@404ster.com",
+    "url": "http://jeffwalter.github.com/"
+  },
+  "main": "./index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jeffwalter/microADSB.git"
+  },
+  "dependencies": {
+    "serialport": "1.3.1"
+  },
+  "readme": "",
+  "readmeFilename": "README",
+  "bugs": {
+    "url": "https://github.com/jeffwalter/microADSB/issues"
+  },
+  "homepage": "https://github.com/jeffwalter/microADSB",
+  "_id": "microADSB@0.1.0",
+  "dist": {
+    "shasum": ""
+  },
+  "_from": "microADSB@",
+  "_resolved": ""
+}
