@@ -41,24 +41,33 @@ microADSB.prototype.on = function (event, callback) {
 
 microADSB.prototype.close = function (callback) {
 	if (this.__SERIAL) {
-		this.__SERIAL.close (function (err) {
-			// Destroy the serial object
-			this.__SERIAL = null;
-			// Reset the buffer
-			this.__BUFFER = '';
-			// Set us offline
-			this.online = false;
-			// Reset the firmware
-			this.firmware = null;
+		// Reset the controller
+		parent.__SERIAL.write (microADSBCommandFormat ([0xff]), function (err, results) {
+			// Close the serial object
+			parent.__SERIAL.close (function (error) {
+				// Destroy the serial object
+				parent.__SERIAL = null;
+				// Reset the buffer
+				parent.__BUFFER = '';
+				// Set us offline
+				parent.online = false;
+				// Reset the firmware
+				parent.firmware = null;
 
-			if (callback) {
-				// Use the passed callback
-				return (callback (err));
+				if (callback) {
+					// Use the passed callback
+					return (callback (err || error));
 
-			} else if (this.__CALLBACKS.close) {
-				// Use the stored callback
-				return (this.__CALLBACKS.close (err));
-			}
+				} else if (parent.__CALLBACKS.close) {
+					// Use the stored callback
+					return (parent.__CALLBACKS.close (err || error));
+
+				} else {
+					// No callback, print to STDERR and be done
+					console.error ('ERROR: microADSB: ' + (err || error));
+					return (null);
+				}
+			});
 		});
 	}
 };

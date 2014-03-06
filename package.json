@@ -1,6 +1,6 @@
 {
   "name": "microadsb",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "NodeJS interface to the microADSB-USB receiver",
   "author": {
     "name": "Jeff Walter",
@@ -20,7 +20,7 @@
     "url": "https://github.com/jeffwalter/microADSB/issues"
   },
   "homepage": "https://github.com/jeffwalter/microADSB",
-  "_id": "microADSB@0.1.0",
+  "_id": "microADSB@0.1.1",
   "dist": {
     "shasum": ""
   },
