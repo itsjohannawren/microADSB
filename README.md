@@ -13,10 +13,14 @@ Requirements
 Installation
 ------------
 
-Inside your `node_modules` directory:
+With NPM in your project directory:
 
-    git clone https://www.github.com/jeffwalter/microADSB.git
-    npm install
+	npm install microadsb
+
+Using GIT inside your `node_modules` directory:
+
+	git clone https://www.github.com/jeffwalter/microADSB.git
+	npm install
 
 Example
 -------
