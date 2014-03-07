@@ -17,6 +17,7 @@ function microADSB () {
 
 	this.online = false;
 	this.firmware = null;
+	this.id = null;
 
 	this.device = null;
 	this.baudrate = 115200;
@@ -172,6 +173,7 @@ microADSB.prototype.open = function (callback) {
 							if (result.data [0] === 0x00) {
 								// Firmware version
 								parent.firmware = result.data [2];
+								parent.id = result.data [3];
 
 								// Send our mode command
 								parent.__SERIAL.write (microADSBCommandFormat ([0x43, microADSBMode (parent.raw, parent.heartbeats, parent.frameids, parent.timestamps, parent.mode)]), function (err, results) {
